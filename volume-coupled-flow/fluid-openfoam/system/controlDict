@@ -38,6 +38,26 @@ runTimeModifiable false;
 
 functions
 {
+    grad1
+    {
+        // Mandatory entries
+        type            grad;
+        libs            (fieldFunctionObjects);
+        field           p;
+
+        // Optional (inherited) entries
+        result          gradp;
+        region          region0;
+        enabled         true;
+        log             true;
+        timeStart       0;
+        timeEnd         1000;
+        executeControl  timeStep;
+        executeInterval 1;
+        writeControl    timeStep;
+        writeInterval   1;
+    }
+
     preCICE_Adapter
     {
         type preciceAdapterFunctionObject;
